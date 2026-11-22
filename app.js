@@ -1,15 +1,16 @@
 const projects = [
-  ['Divergo Fleet Management','Systems engineering','A three-tier fleet platform for owners, drivers and customers. Booking APIs use MongoDB for trip data and Redis for caching and rate limiting.','divergo-fleet-management','','df','#292d24','#c5d99c'],
-  ['AI Resume Matcher','Hiring tools','A hiring interface for matching résumés with job requirements. Explore the live application and its frontend implementation.','ai_resume_frontend','https://ai-resume-frontend-pi.vercel.app','ai','#35271e','#ffae7e'],
-  ['EduWave','Education technology','A collaborative learning platform connecting teachers and students.','eduWave','https://edu-wave.vercel.app','ew','#222e38','#a5d1e7'],
-  ['All Blogs','Full-stack development','A blogging application built with MongoDB, Express, React and Node.js.','Blog-website','https://allblogapp-project.vercel.app','ab','#312636','#deb1e2']
+  ['RoleFinder','Job search automation','A Brave extension collects Indian tech job listings in batches. RoleFinder removes duplicates and ranks openings against skills and experience from a résumé parsed in the browser.','Rahulsunda1/rolefinder','https://rahulsunda1.github.io/rolefinder/','rf','#213332','#99dfca'],
+  ['Divergo Fleet Management','Systems engineering','A three-tier fleet platform for owners, drivers and customers. Booking APIs use MongoDB for trip data and Redis for caching and rate limiting.','SundaRahul/divergo-fleet-management','','df','#292d24','#c5d99c'],
+  ['AI Resume Matcher','Hiring tools','A hiring interface for matching résumés with job requirements. Explore the live application and its frontend implementation.','SundaRahul/ai_resume_frontend','https://ai-resume-frontend-pi.vercel.app','ai','#35271e','#ffae7e'],
+  ['EduWave','Education technology','A collaborative learning platform connecting teachers and students.','SundaRahul/eduWave','https://edu-wave.vercel.app','ew','#222e38','#a5d1e7'],
+  ['All Blogs','Full-stack development','A blogging application built with MongoDB, Express, React and Node.js.','SundaRahul/Blog-website','https://allblogapp-project.vercel.app','ab','#312636','#deb1e2']
 ];
 const grid = document.querySelector('#projects');
 for (const [title, category, description, repo, demo, mark, bg, ink] of projects) {
   const card = document.createElement('article');
   card.className = 'card';
   card.dataset.group = demo ? 'demo' : 'systems';
-  card.innerHTML = `<div class="art" aria-hidden="true" style="--bg:${bg};--ink:${ink}"><b>${mark}</b></div><div class="cardbody"><small>${category}</small><h3>${title}</h3><p>${description}</p>${demo ? '<a href="'+demo+'">Live demo</a>' : ''}<a href="https://github.com/SundaRahul/${repo}">GitHub source</a></div>`;
+  card.innerHTML = `<div class="art" aria-hidden="true" style="--bg:${bg};--ink:${ink}"><b>${mark}</b></div><div class="cardbody"><small>${category}</small><h3>${title}</h3><p>${description}</p>${demo ? '<a href="'+demo+'">Live demo</a>' : ''}<a href="https://github.com/${repo}">GitHub source</a></div>`;
   grid.append(card);
 }
 const filters = document.querySelectorAll('[data-filter]');
